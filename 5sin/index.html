@@ -5,17 +5,36 @@
     <meta charset="utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>5 Sinais do Sexo</title>
+    <title>Assista a Apresentação</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&amp;display=swap">
     <link rel="stylesheet" href="assets/css/styles.min.css">
-<!-- Atraso -->
-<script>
-$('.atraso').hide();
-setTimeout(function() {
-$('.atraso').show();
-}, 10 * 1000);
-</script>
+
+    <script>
+    // Função para fazer a requisição à API e obter a cidade
+    function getCityFromIP() {
+      fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+          var city = data.city || 'Cidade não encontrada';
+          var citySpans = document.querySelectorAll('.citySpan');
+          citySpans.forEach(span => {
+            span.textContent = city;
+          });
+        })
+        .catch(error => {
+          console.error('Erro ao obter a cidade:', error);
+          var citySpans = document.querySelectorAll('.citySpan');
+          citySpans.forEach(span => {
+            span.textContent = 'Erro ao obter a cidade';
+          });
+        });
+    }
+
+    // Chamando a função para obter a cidade quando o documento estiver pronto
+    document.addEventListener('DOMContentLoaded', function() {
+      getCityFromIP();
+    });
+  </script>
 </head>
 
 <body style="background: rgb(31,31,31);">
@@ -63,33 +82,7 @@ document.getElementById("current_date").innerHTML = day + "/" + month + "/" + ye
     <div style="padding-right: 12px;padding-left: 12px;margin-top: 16px;">
         <div class="row">
             <div class="col-lg-2 col-xl-3"></div>
-            <div class="col-xl-6"><script>
-    // Função para fazer a requisição à API e obter a cidade
-    function getCityFromIP() {
-      fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-          var city = data.city || 'Cidade não encontrada';
-          var citySpans = document.querySelectorAll('.citySpan');
-          citySpans.forEach(span => {
-            span.textContent = city;
-          });
-        })
-        .catch(error => {
-          console.error('Erro ao obter a cidade:', error);
-          var citySpans = document.querySelectorAll('.citySpan');
-          citySpans.forEach(span => {
-            span.textContent = 'Erro ao obter a cidade';
-          });
-        });
-    }
-
-    // Chamando a função para obter a cidade quando o documento estiver pronto
-    document.addEventListener('DOMContentLoaded', function() {
-      getCityFromIP();
-    });
-  </script>
-
+            <div class="col-xl-6">
 <style>
 #comentarios_face {
 font-family: Arial;
