@@ -27,16 +27,21 @@
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<script
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<!-- Atraso -->
-<script>
-$('.atraso').hide();
-setTimeout(function() {
-$('.atraso').show();
-}, 316 * 1000);
-</script>
+<!-- Còdigo de Delay -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    /* Defina os elementos com a classe "atraso" para iniciar invisíveis */
+    .atraso {
+      display: none;
+    }
+    /* Defina outros estilos conforme necessário */
+  </style>
+  <script>
+    // Chama a função para mostrar os elementos quando a página carregar
+    $(document).ready(function() {
+      $('.atraso').show();
+    });
+  </script>
 </head>
 
 <body style="font-family: Poppins, sans-serif;background: #F8F7F5;">
