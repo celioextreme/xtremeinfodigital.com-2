@@ -27,26 +27,20 @@
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-    <script>
-    // Função para adicionar a classe 'show' após o atraso
-    function showDelayed(element) {
-      element.classList.add('show');
-    }
+<script>
+    $(document).ready(function() {
+      // Função para atrasar a exibição dos elementos com a classe 'atraso'
+      function delayElements() {
+        $('.atraso').each(function(index, element) {
+          setTimeout(function() {
+            $(element).addClass('show');
+          }, 316000);
+        });
+      }
 
-    // Função para atrasar a exibição dos elementos com a classe 'atraso'
-    function delayElements() {
-      const elementosAtraso = document.querySelectorAll('.atraso');
-      const tempoAtraso = 316000;
-
-      elementosAtraso.forEach(element => {
-        setTimeout(() => {
-          showDelayed(element);
-        }, tempoAtraso);
-      });
-    }
-
-    // Chama a função para atrasar os elementos quando a página carregar
-    window.addEventListener('load', delayElements);
+      // Chama a função para atrasar os elementos quando a página carregar
+      delayElements();
+    });
   </script>
 </head>
 
