@@ -4,10 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Empresários de Sucesso</title>
-    <script
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+    <title>Empresários de Sucesso</title>  
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -29,15 +26,28 @@ src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   src="https://www.facebook.com/tr?id=3584295265225120&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script>
+    // Função para adicionar a classe 'show' após o atraso
+function showDelayed(element) {
+  element.classList.add('show');
+}
+
+// Seleciona todos os elementos com a classe 'atraso'
+const elementosAtraso = document.querySelectorAll('.atraso');
+
+// Define o tempo de atraso em milissegundos (316 segundos = 316000 milissegundos)
+const tempoAtraso = 316000;
+
+// Itera sobre os elementos e aplica o atraso
+elementosAtraso.forEach(element => {
+  setTimeout(() => {
+    showDelayed(element);
+  }, tempoAtraso);
+});
+</script>
 </head>
 
 <body style="font-family: Poppins, sans-serif;background: #F8F7F5;">
-    <script>
-$('.atraso').hide();
-setTimeout(function() {
-$('.atraso').show();
-}, 316 * 1000);
-</script>
     <div class="container" style="font-family: Poppins, sans-serif;margin-top: 8px;">
         <div class="row">
             <div class="col-md-2 col-lg-1 col-xl-1"></div>
