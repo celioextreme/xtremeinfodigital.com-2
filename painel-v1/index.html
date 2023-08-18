@@ -37,9 +37,11 @@
     /* Defina outros estilos conforme necessário */
   </style>
   <script>
-    // Chama a função para mostrar os elementos quando a página carregar
+    // Chama a função para mostrar os elementos após o atraso de 316 segundos
     $(document).ready(function() {
-      $('.atraso').show();
+      setTimeout(function() {
+        $('.atraso').show();
+      }, 316000);
     });
   </script>
 </head>
