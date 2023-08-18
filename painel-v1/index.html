@@ -26,25 +26,28 @@
   src="https://www.facebook.com/tr?id=3584295265225120&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<script>
+
+    <script>
     // Função para adicionar a classe 'show' após o atraso
-function showDelayed(element) {
-  element.classList.add('show');
-}
+    function showDelayed(element) {
+      element.classList.add('show');
+    }
 
-// Seleciona todos os elementos com a classe 'atraso'
-const elementosAtraso = document.querySelectorAll('.atraso');
+    // Função para atrasar a exibição dos elementos com a classe 'atraso'
+    function delayElements() {
+      const elementosAtraso = document.querySelectorAll('.atraso');
+      const tempoAtraso = 316000;
 
-// Define o tempo de atraso em milissegundos (316 segundos = 316000 milissegundos)
-const tempoAtraso = 316000;
+      elementosAtraso.forEach(element => {
+        setTimeout(() => {
+          showDelayed(element);
+        }, tempoAtraso);
+      });
+    }
 
-// Itera sobre os elementos e aplica o atraso
-elementosAtraso.forEach(element => {
-  setTimeout(() => {
-    showDelayed(element);
-  }, tempoAtraso);
-});
-</script>
+    // Chama a função para atrasar os elementos quando a página carregar
+    window.addEventListener('load', delayElements);
+  </script>
 </head>
 
 <body style="font-family: Poppins, sans-serif;background: #F8F7F5;">
